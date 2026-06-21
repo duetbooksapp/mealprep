@@ -349,7 +349,37 @@ S.items = S.items || {};      // {recipeId: {ingredientIndex: {q:qty, p:priceEac
 S.flow = S.flow || {};
 S.assume = S.assume || {eat:13, cook:25};
 S.history = S.history || [];
-function save(){ localStorage.setItem('mealprep', JSON.stringify(S)); }
+
+/* ---------- CLOUD SYNC (Firebase RTDB, shared duet-crm DB) ---------- */
+const SYNC_URL='https://duet-crm-default-rtdb.firebaseio.com/duetmealprep/steve_maxim.json';
+let pushTimer=null, pulling=false;
+function applyRemote(d){
+  if(!d || typeof d!=='object') return false;
+  Object.keys(S).forEach(k=>delete S[k]);
+  Object.assign(S,d);
+  S.currentId = S.currentId || 'queso-taco-mac';
+  S.items = S.items || {}; S.flow = S.flow || {};
+  S.assume = S.assume || {eat:13, cook:25}; S.history = S.history || [];
+  return true;
+}
+async function pull(){
+  if(pulling) return; pulling=true;
+  try{
+    const r=await fetch(SYNC_URL,{cache:'no-store'});
+    const d=await r.json();
+    if(d && (d.updatedAt||0) > (S.updatedAt||0)){
+      applyRemote(d); localStorage.setItem('mealprep', JSON.stringify(S)); renderAll();
+    }
+  }catch(e){}
+  pulling=false;
+}
+async function push(){ try{ await fetch(SYNC_URL,{method:'PUT',body:JSON.stringify(S)}); }catch(e){} }
+
+function save(){
+  S.updatedAt = Date.now();
+  localStorage.setItem('mealprep', JSON.stringify(S));
+  clearTimeout(pushTimer); pushTimer=setTimeout(push, 600);
+}
 
 function rec(){ return RECIPES.find(r=>r.id===S.currentId)||RECIPES[0]; }
 function nextSunday(){ const d=new Date(); d.setDate(d.getDate()+((7-d.getDay())%7||7)); return d.toLocaleDateString(undefined,{month:'short',day:'numeric'}); }
@@ -515,6 +545,12 @@ document.querySelectorAll('nav button').forEach(b=>{
 
 function renderAll(){ renderWeek(); renderShop(); renderLog(); renderLib(); }
 renderAll();
+
+/* pull cloud state on open, on return to app, and every 20s */
+pull();
+setInterval(pull, 20000);
+window.addEventListener('focus', pull);
+document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) pull(); });
 </script>
 </body>
 </html>
