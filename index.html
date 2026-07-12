@@ -333,13 +333,146 @@ const RECIPES = [
     'Add 250 g cheddar, LOW 10–15 min.',
     'Fill 18 tortillas, roll, store/freeze.'
   ]},
- // title-only rotation picks (open PDF for steps)
- {id:'t1', name:'Birria Queso Protein Bowl', source:'Set It Shred Vol 1, p.5', cal:557,p:58,c:46,f:14, servings:10, titleOnly:true},
- {id:'t2', name:'Buffalo Chicken Mac N Cheese', source:'Set It Shred Vol 1', cal:602,p:67,c:0,f:0, servings:10, titleOnly:true},
- {id:'t3', name:'Chicken Bacon Ranch Pasta', source:'Set It Shred Vol 1', cal:601,p:70,c:0,f:0, servings:10, titleOnly:true},
- {id:'t4', name:'Creamy Chicken Tortellini', source:'Set It Shred Vol 1', cal:525,p:60,c:0,f:0, servings:10, titleOnly:true},
- {id:'t5', name:'Chicken Parmesan Alfredo', source:'Set It Shred Vol 1', cal:540,p:65,c:0,f:0, servings:10, titleOnly:true},
- {id:'t6', name:'Mongolian Beef & Rice', source:'Set It Shred Vol 1', cal:552,p:51,c:0,f:0, servings:10, titleOnly:true}
+ {id:'t1', name:'Birria Queso Protein Bowl', source:'Set It Shred Vol 1, p.5',
+  cal:557,p:58,c:46,f:14, servings:10, prep:'20–30 min', cook:'6–8 hr',
+  ingredients:[
+    {name:'Top sirloin steak', need:'64 oz (4 lb)', qty:4, unit:'lb', price:7, q:'top sirloin steak'},
+    {name:'Dried guajillo peppers', need:'3', qty:1, unit:'pack', price:3, q:'dried guajillo peppers'},
+    {name:'Chipotle peppers in adobo', need:'100 g', qty:1, unit:'can', price:2, q:'chipotle peppers in adobo'},
+    {name:'Garlic', need:'7 cloves', qty:1, unit:'head', price:.75, q:'garlic'},
+    {name:'Beef bone broth', need:'4 cups', qty:1, unit:'carton', price:4, q:'beef bone broth'},
+    {name:'Minute white rice (dry)', need:'5 cups', qty:2, unit:'box', price:4, q:'Minute white rice'},
+    {name:'Tomato paste', need:'1 tbsp', qty:1, unit:'can', price:1, q:'tomato paste'},
+    {name:'Fat-free cottage cheese', need:'400 g', qty:1, unit:'16oz tub', price:3, q:'fat free cottage cheese'},
+    {name:'Reduced-fat cream cheese', need:'100 g', qty:1, unit:'8oz block', price:3, q:'1/3 less fat cream cheese'},
+    {name:'Tostitos Salsa Con Queso', need:'100 g', qty:1, unit:'jar', price:3.5, q:'Tostitos Salsa Con Queso'},
+    {name:'Nonfat Greek yogurt', need:'200 g', qty:1, unit:'tub', price:4, q:'nonfat Greek yogurt'},
+    {name:'Lime', need:'1 tsp juice', qty:1, unit:'each', price:.5, q:'lime'},
+    {name:'Apple cider vinegar', need:'1 tbsp', qty:1, unit:'bottle', price:3, q:'apple cider vinegar'},
+    {name:'Spices (cumin, smoked paprika, oregano, S&P)', need:'see steps', qty:1, unit:'pantry', price:2, q:'cumin smoked paprika oregano'}
+  ],
+  steps:[
+    'Deseed 3 guajillo peppers, boil 10–12 min until softened, drain, and move to a blender.',
+    'Blend boiled guajillos, 50 g chipotle, 6 garlic cloves, cumin, smoked paprika, oregano, splash ACV, and 1 cup broth into a smooth red puree.',
+    'Place cubed sirloin in slow cooker, pour birria sauce over, add 1 more cup broth, season with S&P. Cook LOW 6–8 hr until shreddable.',
+    'Blend cottage cheese, cream cheese, 1 garlic clove, and 100 g queso until smooth. Fold into the shredded beef until creamy.',
+    'Blend 50 g chipotle with 2 cups broth, whisk in tomato paste + salt, add rice and simmer until absorbed and fluffy.',
+    'Spoon rice into bowls, layer the queso birria beef, finish with yogurt, lime, or pepper. Portion into 10.'
+  ]},
+ {id:'t2', name:'Buffalo Chicken Mac N Cheese', source:'Set It Shred Vol 1, p.4',
+  cal:602,p:67,c:43,f:16, servings:10, prep:'20–30 min', cook:'6–7 hr',
+  ingredients:[
+    {name:'Boneless skinless chicken breast', need:'4 lb', qty:4, unit:'lb', price:3.50, q:'boneless skinless chicken breast'},
+    {name:'Cavatappi pasta (dry)', need:'16 oz', qty:1, unit:'box', price:2, q:'cavatappi pasta'},
+    {name:'Fat-free cottage cheese', need:'800 g', qty:1, unit:'32oz tub', price:4, q:'fat free cottage cheese'},
+    {name:'⅓-less-fat cream cheese', need:'200 g', qty:1, unit:'8oz block', price:3, q:'1/3 less fat cream cheese'},
+    {name:'Reduced-fat cheddar', need:'200 g', qty:1, unit:'8oz bag', price:3, q:'reduced fat shredded cheddar'},
+    {name:'Regular shredded cheddar', need:'200 g', qty:1, unit:'8oz bag', price:3, q:'shredded cheddar cheese'},
+    {name:'Kraft mac & cheese (for powder)', need:'2 packets', qty:2, unit:'box', price:1.5, q:'Kraft mac and cheese'},
+    {name:'Center-cut bacon', need:'8 slices', qty:1, unit:'pack', price:5, q:'center cut bacon'},
+    {name:"Frank's RedHot Buffalo Sauce", need:'½ cup', qty:1, unit:'bottle', price:3.5, q:"Frank's RedHot Buffalo Sauce"},
+    {name:'Low-sodium chicken broth', need:'2 cups', qty:1, unit:'carton', price:3, q:'low sodium chicken broth'},
+    {name:'Spices (garlic, onion, smoked paprika, S&P)', need:'see steps', qty:1, unit:'pantry', price:2, q:'garlic powder onion powder smoked paprika'}
+  ],
+  steps:[
+    'Add 4 lb chicken, 2 cups broth, and ½ cup buffalo sauce to the slow cooker. Season with garlic, onion, smoked paprika, salt, and pepper.',
+    'Cover and cook LOW 6–7 hr or HIGH 3–4 hr, until chicken shreds easily.',
+    'Boil 16 oz cavatappi in salted water until al dente. Drain and set aside.',
+    'Blend 800 g cottage cheese, 200 g cream cheese, 200 g reduced-fat cheddar, 200 g regular cheddar, and 2 mac & cheese packets until smooth (thin with 2–4 tbsp broth).',
+    'Shred chicken, return to cooker, then stir in the pasta and all blended cheese sauce until evenly coated.',
+    'Fold in 8 slices chopped bacon, adjust with extra buffalo or salt. Portion into 10.'
+  ]},
+ {id:'t3', name:'Chicken Bacon Ranch Pasta', source:'Set It Shred Vol 1, p.9',
+  cal:601,p:70,c:40,f:17, servings:10, prep:'20–30 min', cook:'6–7 hr',
+  ingredients:[
+    {name:'Boneless skinless chicken breast', need:'4 lb', qty:4, unit:'lb', price:3.50, q:'boneless skinless chicken breast'},
+    {name:'Chicken bone broth', need:'2 cups', qty:1, unit:'carton', price:4, q:'chicken bone broth'},
+    {name:'Cavatappi pasta (dry)', need:'16 oz', qty:1, unit:'box', price:2, q:'cavatappi pasta'},
+    {name:'Center-cut bacon', need:'8 slices', qty:1, unit:'pack', price:5, q:'center cut bacon'},
+    {name:'Fat-free cottage cheese', need:'700 g', qty:1, unit:'24oz tub', price:3.5, q:'fat free cottage cheese'},
+    {name:'⅓-less-fat cream cheese', need:'200 g', qty:1, unit:'8oz block', price:3, q:'1/3 less fat cream cheese'},
+    {name:'Reduced-fat mozzarella', need:'200 g', qty:1, unit:'8oz bag', price:3, q:'reduced fat shredded mozzarella'},
+    {name:'Shredded Parmesan', need:'100 g', qty:1, unit:'8oz bag', price:4, q:'shredded parmesan cheese'},
+    {name:'Ranch seasoning mix', need:'4 tsp', qty:1, unit:'pack', price:1.5, q:'ranch seasoning mix'},
+    {name:'Garlic', need:'5 cloves', qty:1, unit:'head', price:.75, q:'garlic'},
+    {name:'Kale (optional)', need:'1 cup', qty:1, unit:'bunch', price:2, q:'kale'},
+    {name:'Spices (onion, garlic, smoked paprika, S&P)', need:'see steps', qty:1, unit:'pantry', price:2, q:'onion powder garlic powder smoked paprika'}
+  ],
+  steps:[
+    'Add 4 lb chicken, 2 cups broth, 5 minced garlic cloves, 3 tsp ranch, onion powder, garlic powder, smoked paprika, and S&P. Cook LOW 6–7 hr or HIGH 3–4 hr.',
+    'Pan- or air-fry 8 slices bacon until crispy, chop, and set aside.',
+    'Blend 700 g cottage cheese, 200 g cream cheese, 100 g Parmesan, and 1 tsp ranch until smooth (thin with up to ½ cup broth).',
+    'Shred chicken in the cooker and stir in the blended ranch cheese sauce until combined.',
+    'Boil 16 oz cavatappi until al dente, drain, and stir into the creamy chicken.',
+    'Stir in 200 g mozzarella until melted, top with chopped bacon, fold in 1 cup kale if using. Portion into 10.'
+  ]},
+ {id:'t4', name:'Creamy Chicken Tortellini', source:'Set It Shred Vol 1, p.11',
+  cal:525,p:60,c:28,f:18, servings:10, prep:'20–30 min', cook:'6–7 hr',
+  ingredients:[
+    {name:'Boneless skinless chicken breast', need:'4 lb', qty:4, unit:'lb', price:3.50, q:'boneless skinless chicken breast'},
+    {name:'Rana Cheese Lovers Tortellini', need:'4 cups', qty:2, unit:'pack', price:4.5, q:'Rana Cheese Lovers Tortellini'},
+    {name:"Rao's Homemade Marinara", need:'2 cups', qty:1, unit:'jar', price:5, q:"Rao's Homemade Marinara"},
+    {name:'⅓-reduced-fat cream cheese', need:'100 g', qty:1, unit:'8oz block', price:3, q:'1/3 less fat cream cheese'},
+    {name:'Fat-free cottage cheese', need:'350 g', qty:1, unit:'16oz tub', price:3, q:'fat free cottage cheese'},
+    {name:'Shredded Parmesan', need:'100 g', qty:1, unit:'8oz bag', price:4, q:'shredded parmesan cheese'},
+    {name:'Reduced-fat mozzarella', need:'100 g', qty:1, unit:'8oz bag', price:3, q:'reduced fat shredded mozzarella'},
+    {name:'Garlic', need:'3 cloves', qty:1, unit:'head', price:.75, q:'garlic'},
+    {name:'Spices (garlic, onion, smoked paprika, Italian, S&P)', need:'see steps', qty:1, unit:'pantry', price:2, q:'garlic powder onion powder Italian seasoning'}
+  ],
+  steps:[
+    'Spray cooker. Add 4 lb chicken, season with garlic powder, onion powder, smoked paprika, Italian seasoning, 3 minced garlic cloves, S&P.',
+    'Pour 2 cups Rao’s marinara over the chicken to coat evenly.',
+    'Cover and cook LOW 6 hr (or HIGH 3–4 hr) until the chicken shreds easily.',
+    'Blend 350 g cottage cheese and 100 g cream cheese until completely smooth.',
+    'Shred chicken in the cooker, pour in the blended sauce, then stir in 100 g Parmesan, 100 g mozzarella, and 4 cups tortellini until coated.',
+    'Cover and cook LOW 20 min until tortellini is tender and sauce thickens. Portion into 10.'
+  ]},
+ {id:'t5', name:'Chicken Parmesan Alfredo', source:'Set It Shred Vol 1, p.3',
+  cal:540,p:65,c:40,f:11, servings:10, prep:'20–30 min', cook:'6–7 hr',
+  ingredients:[
+    {name:'Boneless skinless chicken breast', need:'4 lb', qty:4, unit:'lb', price:3.50, q:'boneless skinless chicken breast'},
+    {name:'Chicken bone broth', need:'2 cups', qty:1, unit:'carton', price:4, q:'chicken bone broth'},
+    {name:'Shredded Parmesan cheese', need:'80 g (divided)', qty:1, unit:'8oz bag', price:4, q:'shredded parmesan cheese'},
+    {name:'⅓-reduced-fat cream cheese', need:'100 g', qty:1, unit:'8oz block', price:3, q:'1/3 less fat cream cheese'},
+    {name:'Fat-free cottage cheese', need:'600 g', qty:1, unit:'24oz tub', price:3.5, q:'fat free cottage cheese'},
+    {name:'Lemon juice', need:'1 tbsp', qty:1, unit:'bottle', price:2, q:'lemon juice'},
+    {name:'Reduced-fat mozzarella', need:'100 g', qty:1, unit:'8oz bag', price:3, q:'reduced fat shredded mozzarella'},
+    {name:'Barilla Protein+ angel hair pasta', need:'18 oz', qty:2, unit:'box', price:2.50, q:'Barilla Protein Plus angel hair pasta'},
+    {name:'Spices (garlic powder, Italian seasoning, S&P)', need:'see steps', qty:1, unit:'pantry', price:2, q:'garlic powder Italian seasoning'}
+  ],
+  steps:[
+    'Spray slow cooker. Add 4 lb chicken breast, 1 tbsp garlic powder, 1 tbsp Italian seasoning, plus salt & pepper to taste.',
+    'Pour in 2 cups bone broth and add 40 g Parmesan. Cover and cook LOW 6–7 hr or HIGH 3–4 hr, until chicken shreds easily.',
+    'In a blender, combine 600 g cottage cheese, 100 g cream cheese, 1 tbsp lemon juice, and remaining 40 g Parmesan. Blend until completely smooth.',
+    'Shred the chicken directly in the slow cooker, then pour in the blended sauce and stir until creamy and fully coated.',
+    'Cook 18 oz Barilla Protein+ angel hair pasta per package directions, drain, and stir into the slow cooker.',
+    'Add 100 g mozzarella, stir until melted and creamy, then portion into 10 equal servings and serve hot.'
+  ]},
+ {id:'t6', name:'Mongolian Beef & Rice', source:'Set It Shred Vol 1, p.10',
+  cal:552,p:51,c:46,f:16, servings:9, prep:'20–30 min', cook:'7 hr',
+  ingredients:[
+    {name:'Top round beef (thinly sliced)', need:'4 lb', qty:4, unit:'lb', price:5.5, q:'top round beef'},
+    {name:'Beef bone broth', need:'1 cup', qty:1, unit:'carton', price:4, q:'beef bone broth'},
+    {name:'Light soy sauce', need:'1 cup', qty:1, unit:'bottle', price:3, q:'light soy sauce'},
+    {name:'Hoisin sauce', need:'2 tbsp', qty:1, unit:'bottle', price:3, q:'hoisin sauce'},
+    {name:'Sriracha sauce', need:'2 tbsp', qty:1, unit:'bottle', price:3, q:'sriracha sauce'},
+    {name:'Rice vinegar', need:'4 tbsp', qty:1, unit:'bottle', price:2.5, q:'rice vinegar'},
+    {name:'Stevia packets', need:'2', qty:1, unit:'box', price:3, q:'stevia packets'},
+    {name:'Garlic', need:'3 cloves', qty:1, unit:'head', price:.75, q:'garlic'},
+    {name:'Red bell pepper', need:'1', qty:1, unit:'each', price:1, q:'red bell pepper'},
+    {name:'Jalapeño (optional)', need:'2', qty:2, unit:'each', price:.5, q:'jalapeno'},
+    {name:'Cornstarch', need:'2 tbsp', qty:1, unit:'box', price:1.5, q:'cornstarch'},
+    {name:'Minute white rice (dry)', need:'400 g', qty:1, unit:'box', price:4, q:'Minute white rice'},
+    {name:'Green onions + sesame seeds (garnish)', need:'to top', qty:1, unit:'each', price:1.5, q:'green onions sesame seeds'}
+  ],
+  steps:[
+    '(Optional) Lightly spray a skillet and sear the sliced beef 2–3 min per side to lock in flavor.',
+    'Add beef to the cooker with 1 cup broth, 1 cup soy sauce, 2 tbsp hoisin, 2 tbsp sriracha, 4 tbsp rice vinegar, garlic, bell pepper, jalapeños, and stevia. Stir to coat.',
+    'Cover and cook LOW 6 hr.',
+    'In the final hour, whisk 2 tbsp cornstarch with 2–3 tbsp broth, stir in, switch to HIGH, and cook 1 hr until the sauce thickens.',
+    'Cook 400 g Minute rice per package directions.',
+    'Portion ⅑ of the rice into each container, top with ⅑ of the Mongolian beef, and garnish with green onion or sesame seeds. Makes 9.'
+  ]}
 ];
 
 /* ---------- STATE ---------- */
